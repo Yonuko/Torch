@@ -15,8 +15,8 @@ public class NPCSpawner : MonoBehaviour
         for (int i = 0; i < countOfNPC; i++)
         {
             GameObject go = Instantiate(NPCPrefab, Spawner.position, Spawner.rotation);
-         //   go.GetComponent<AIPathFinding>().speed = Random.Range(1, 3);
-            go.GetComponent<AIPathFinding>().speed = 1;
+            go.GetComponent<AIPathFinding>().speed = Random.Range(1, 3);
+         //   go.GetComponent<AIPathFinding>().speed = 1;
         }
     }
 

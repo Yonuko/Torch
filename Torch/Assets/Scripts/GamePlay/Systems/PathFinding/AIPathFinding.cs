@@ -6,29 +6,37 @@ using UnityEngine.AI;
 public class AIPathFinding : MonoBehaviour
 {
 
-    public Transform destination;
+    public List<Transform> destinationList;
     public int speed = 2;
 
     NavMeshAgent agent;
-    bool test = false;
+    int waypointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        destination = GameObject.Find("Pedestal LOD Test").transform;
+        speed = Random.Range(1, 3);
+
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-        agent.SetDestination(destination.position);
+        if (destinationList[waypointIndex] == null)
+        {
+            return;
+        }
+        agent.SetDestination(destinationList[waypointIndex].position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (agent.remainingDistance < agent.stoppingDistance && !test)
+        if (agent.remainingDistance < agent.stoppingDistance)
         {
-            test = true;
-            Debug.Log("Salut " + transform.name);
-            transform.Translate(new Vector3(0, 0, 10));
+            waypointIndex++;
+            if (waypointIndex >= destinationList.Count)
+            {
+                return;
+            }
+            agent.SetDestination(destinationList[waypointIndex].position);
         }
     }
 }

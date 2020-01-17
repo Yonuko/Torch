@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bce2dd0de507ff468d1f5862da81ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDayTime: 600
+  maxDayTime: 5
 --- !u!4 &1108628468
 Transform:
   m_ObjectHideFlags: 0
@@ -1872,7 +1872,6 @@ GameObject:
   - component: {fileID: 1577836856}
   - component: {fileID: 1577836855}
   - component: {fileID: 1577836858}
-  - component: {fileID: 1577836859}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1957,22 +1956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1867804d4d2493442b7af644f9941e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1577836859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577836854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e678fd0afc693c4fa7f9c4b29d16b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCPrefab: {fileID: 4522235093750551944, guid: a2dd9ff673f64904ab5336004d5db132,
-    type: 3}
-  countOfNPC: 50
-  Spawner: {fileID: 1794502565}
 --- !u!1 &1638770029
 GameObject:
   m_ObjectHideFlags: 0
