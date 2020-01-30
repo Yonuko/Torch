@@ -35,13 +35,32 @@ public class KeysManager : MonoBehaviour {
 
     public string[] GetButtonNames()
     {
-
         return keys.Keys.ToArray();
     }
 
     public void SetButtonForKey(string buttonName, KeyCode keyCode)
     {
-        keys[buttonName] = keyCode;
+        bool foundAKey = false;
+        string alreadySetKey = "";
+        foreach (string key in keys.Keys)
+        {
+            if (keys[key] == keyCode)
+            {
+                alreadySetKey = key;
+                foundAKey = true;
+                break;
+            }
+        }
+        if (foundAKey)
+        {
+            KeyCode temp = keys[alreadySetKey];
+            keys[alreadySetKey] = keys[buttonName];
+            keys[buttonName] = temp;
+        }
+        else
+        {
+            keys[buttonName] = keyCode;
+        }
     }
 
 }

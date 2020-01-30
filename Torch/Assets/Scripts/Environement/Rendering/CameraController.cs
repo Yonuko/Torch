@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour {
     private float correctedDistance;
     private bool rotateBehind = false;
 
-    private bool StopMoving = false;
+    private bool StopMoving = false, logEnabled = false;
 
     private GameObject[] playerAffichage = { null, null, null };
 
@@ -74,6 +74,11 @@ public class CameraController : MonoBehaviour {
                     playerAffichage[i] = target.GetChild(i).gameObject;
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            logEnabled = !logEnabled;
         }
 
     }
@@ -148,8 +153,13 @@ public class CameraController : MonoBehaviour {
             // subtracting out a safety "offset" distance from the object we hit.  The offset will help
             // keep the camera from being right on top of the surface we hit, which usually shows up as
             // the surface geometry getting partially clipped by the camera's front clipping plane.
-            if (collisionHit.transform.gameObject != Player)
+            if (collisionHit.transform.gameObject != Player && !collisionHit.collider.isTrigger)
             {
+                // If log are enable show the log of the objet that the camera hit
+                if (logEnabled)
+                {
+                    Debug.Log("La caméra à toucher l'objet : " + collisionHit.transform.gameObject);
+                }
                 correctedDistance = Vector3.Distance(trueTargetPosition, collisionHit.point) - offsetFromWall;
                 isCorrected = true;
             }

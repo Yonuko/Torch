@@ -43,8 +43,8 @@ public class KeyBindingUI : MonoBehaviour {
             string bn = buttonsName[i];
             buttonToLabel[bn] = keysButtons[i].transform.GetChild(0).GetComponent<Text>();
             keysButtons[i].onClick.AddListener( () => { StartRebindFor(bn); });
-            buttonToLabel[bn].text = GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys[bn].ToString();
         }
+        UpdateKeyShowing();
 
         if (Input.GetJoystickNames().Length > 0)
         {
@@ -82,21 +82,7 @@ public class KeyBindingUI : MonoBehaviour {
                     if (Input.GetKeyDown(kc))
                     {
                         keysManager.SetButtonForKey(keyToRebind, kc);
-                        if (inputMode.value == 0)
-                        {
-                            buttonToLabel[keyToRebind].text = kc.ToString();
-                        }
-                        else
-                        {
-                            if (0 == 0)
-                            {
-                                //Si il s'agit d'un manette de PS4
-                            }
-                            else
-                            {
-                                //Si il s'agit d'une manette xbox
-                            }
-                        }
+                        UpdateKeyShowing();
                         keyToRebind = null;
                         GameObject.FindWithTag("Loader").GetComponent<Loader>().SaveKeys();
                         break;
@@ -110,5 +96,29 @@ public class KeyBindingUI : MonoBehaviour {
     void StartRebindFor(string buttonNames)
     {
         keyToRebind = buttonNames;
+    }
+
+    void UpdateKeyShowing()
+    {
+        for (int i = 0; i < buttonsName.Length; i++)
+        {
+            string bn = buttonsName[i];
+            // Si on utilise un clavier
+            if (inputMode.value == 0)
+            {
+                buttonToLabel[bn].text = GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys[bn].ToString();
+            }
+            else
+            {
+                if (0 == 0)
+                {
+                    //Si il s'agit d'un manette de PS4
+                }
+                else
+                {
+                    //Si il s'agit d'une manette xbox
+                }
+            }
+        }
     }
 }

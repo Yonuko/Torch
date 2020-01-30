@@ -298,6 +298,7 @@ MonoBehaviour:
   - ...
   - Oui je sais je peux pas bosser j'ai pas de forge, c'est bon pas besoin de me
     le rappeller
+  dialogue: 0
 --- !u!1 &50723947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7767868420266356462, guid: f1f60589a8dab6d48a88195df86726b5,
@@ -1365,37 +1366,37 @@ PrefabInstance:
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -198.71799
+      value: -197.926
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.329994
+      value: -24.286
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -218.84
+      value: -219.358
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.31652007
+      value: 0.6647672
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.58711195
+      value: -0.24100743
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.26719216
+      value: 0.24100743
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.695502
+      value: 0.6647672
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
@@ -1405,32 +1406,32 @@ PrefabInstance:
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 48.940002
+      value: 90.00001
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -80.339005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 39.856003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
+        type: 3}
       propertyPath: m_LocalScale.y
-      value: 15.409273
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 15.409275
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4910253098758845858, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 15.40927
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4317263135971542152, guid: c4e6895a85988f94f9357cfc7d1b8c74,
         type: 3}
@@ -12224,8 +12225,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771988719}
-  m_LocalRotation: {x: 0, y: 0.032640297, z: 0, w: -0.9994672}
-  m_LocalPosition: {x: 114.51001, y: 33.03, z: 74.850006}
+  m_LocalRotation: {x: 0.019065645, y: 0.9807282, z: 0.1272226, w: -0.14704828}
+  m_LocalPosition: {x: 283.513, y: 32.166077, z: 310.0114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17108,6 +17109,7 @@ MonoBehaviour:
   - "Comme tu peux le voir c'est plut\xF4t r\xE9ussi je trouve"
   - "Bon bref je commence \xE0 plus avoir grand chose \xE0 te dire..."
   - "Va voir mon pote Pierre l\xE0-bas il sera surement plus RP"
+  dialogue: 0
 --- !u!1 &1811058592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7767868420266356462, guid: f1f60589a8dab6d48a88195df86726b5,

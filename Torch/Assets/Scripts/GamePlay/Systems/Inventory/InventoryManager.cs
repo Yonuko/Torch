@@ -58,11 +58,6 @@ public class InventoryManager : MonoBehaviour
         {
             inventory = !inventory;
         }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            RemoveItems(1, 5);
-        }
     }
 
     int GetItemCountInInventory(int itemID)

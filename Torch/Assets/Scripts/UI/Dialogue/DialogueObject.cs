@@ -14,7 +14,8 @@ public class DialogueObject : MonoBehaviour
     float timer = 0, desiredSpeed;
 
     int dialogueIndex = 0, letterIndex = 0;
-    bool dialogue;
+    // This boolean is public because I need the escape button to disable the message only if this is false
+    public bool dialogue;
     Loader loader;
 
     Coroutine currentCoroutine;
@@ -59,6 +60,18 @@ public class DialogueObject : MonoBehaviour
 
         if (dialogue)
         {
+            // If you press escape, end the dialogue window.
+            if (Input.GetKeyDown(loader.datas.keys["Escape"]))
+            {
+                dialogue = false;
+                GameObject.FindWithTag("Player").GetComponent<PlayerMouvement>().stopMoving = false;
+                dialogueIndex = 0;
+                letterIndex = 0;
+                dialogueManager.dialogueBox.text = "";
+                // Return to quit the Update function, so it dosn't try to access a dialogue window that doesn't exist anymore
+                return;
+            }
+
             // If you press the left click, skip the current box
             if (Input.GetMouseButtonDown(0))
             {
