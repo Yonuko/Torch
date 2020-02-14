@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
 
         if (Loader.IsLoader())
         {
-            l = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            l = Loader.get();
         }
 
         if (PlayerSaveLoader.IsPlayerLoader())

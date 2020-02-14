@@ -51,7 +51,7 @@ public class Pause : MonoBehaviour {
 
     public void GotoMenu()
     {
-        GameObject.FindWithTag("Loader").GetComponent<Loader>().Save();
+        Loader.get().Save();
         Destroy(gameObject);
         Destroy(GameObject.FindWithTag("Player").gameObject);
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);

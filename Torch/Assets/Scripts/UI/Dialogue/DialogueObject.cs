@@ -37,7 +37,7 @@ public class DialogueObject : MonoBehaviour
         // Keep in memory the default speed
         desiredSpeed = dialogueManager.dialogueSpeed;
 
-        loader = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+        loader = Loader.get();
 
         anim = GetComponent<Animator>();
     }

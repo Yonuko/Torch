@@ -16,7 +16,7 @@ public class TouchManager : MonoBehaviour {
     void Start () {
         pauseObject = GameObject.Find("Pause");
 
-        loader = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+        loader = Loader.get();
 
         mapManager = FindObjectOfType<MapManager>();
 

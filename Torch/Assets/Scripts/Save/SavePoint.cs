@@ -11,7 +11,7 @@ public class SavePoint : MonoBehaviour
     {
         if (hit.tag == "Player")
         {
-            if (Input.GetKeyDown(GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys["Action"]))
+            if (Input.GetKeyDown(Loader.get().datas.keys["Action"]))
             {
                 GameObject.FindWithTag("PlayerLoader").GetComponent<PlayerSaveLoader>().Save(ID);
             }

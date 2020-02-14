@@ -43,7 +43,7 @@ public class Option : MonoBehaviour {
 
         if (Loader.IsLoader())
         {
-            Loader l = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            Loader l = Loader.get();
             l.Load();
 
             //Load VideosOption;

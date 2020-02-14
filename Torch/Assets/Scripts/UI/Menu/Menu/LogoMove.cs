@@ -10,7 +10,6 @@ public class LogoMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Cursor.lockState = CursorLockMode.Confined;
 
         Ray cameraRay = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y + Screen.height, Input.mousePosition.z));
@@ -22,6 +21,5 @@ public class LogoMove : MonoBehaviour
             Vector3 pointToLook = cameraRay.GetPoint(rayLenght);
             transform.LookAt(pointToLook * 5, Vector3.up);
         }
-  
     }
 }

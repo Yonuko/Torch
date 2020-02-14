@@ -25,7 +25,7 @@ public class ItemChecker : MonoBehaviour
     {
         if (Loader.IsLoader())
         {
-            loader = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            loader = Loader.get();
         }
 
         GameObject.FindWithTag("ItemManager").GetComponent<InventoryManager>().AddItems(1,3);
