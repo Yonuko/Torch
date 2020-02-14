@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
 
     public static InventoryManager inventoryManager;
 
-    public int slotCount;
+    public int slotCount = 50;
 
     public bool inventory;
 

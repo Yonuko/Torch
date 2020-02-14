@@ -18,6 +18,7 @@ TagManager:
   - ItemList
   - ItemManager
   - WorldPin
+  - Weapon
   layers:
   - Default
   - TransparentFX
