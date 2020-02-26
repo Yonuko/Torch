@@ -1,44 +1,110 @@
 fileFormatVersion: 2
 guid: 4773286a2d8df1e4782e3f2d412b7fd0
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Base
-    100002: //RootNode
-    100004: Stele_10
-    100006: Stele_11
-    100008: Stele_7
-    100010: Stele_8
-    100012: Stele_9
-    400000: Base
-    400002: //RootNode
-    400004: Stele_10
-    400006: Stele_11
-    400008: Stele_7
-    400010: Stele_8
-    400012: Stele_9
-    2100000: lambert1
-    2300000: Base
-    2300002: Stele_10
-    2300004: Stele_11
-    2300006: Stele_7
-    2300008: Stele_8
-    2300010: Stele_9
-    3300000: Base
-    3300002: Stele_10
-    3300004: Stele_11
-    3300006: Stele_7
-    3300008: Stele_8
-    3300010: Stele_9
-    4300000: Base
-    4300002: Stele_11
-    4300004: Stele_9
-    4300006: Stele_10
-    4300008: Stele_7
-    4300010: Stele_8
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Base
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: Stele_10
+  - first:
+      1: 100006
+    second: Stele_11
+  - first:
+      1: 100008
+    second: Stele_7
+  - first:
+      1: 100010
+    second: Stele_8
+  - first:
+      1: 100012
+    second: Stele_9
+  - first:
+      4: 400000
+    second: Base
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: Stele_10
+  - first:
+      4: 400006
+    second: Stele_11
+  - first:
+      4: 400008
+    second: Stele_7
+  - first:
+      4: 400010
+    second: Stele_8
+  - first:
+      4: 400012
+    second: Stele_9
+  - first:
+      21: 2100000
+    second: lambert1
+  - first:
+      23: 2300000
+    second: Base
+  - first:
+      23: 2300002
+    second: Stele_10
+  - first:
+      23: 2300004
+    second: Stele_11
+  - first:
+      23: 2300006
+    second: Stele_7
+  - first:
+      23: 2300008
+    second: Stele_8
+  - first:
+      23: 2300010
+    second: Stele_9
+  - first:
+      33: 3300000
+    second: Base
+  - first:
+      33: 3300002
+    second: Stele_10
+  - first:
+      33: 3300004
+    second: Stele_11
+  - first:
+      33: 3300006
+    second: Stele_7
+  - first:
+      33: 3300008
+    second: Stele_8
+  - first:
+      33: 3300010
+    second: Stele_9
+  - first:
+      43: 4300000
+    second: Base
+  - first:
+      43: 4300002
+    second: Stele_11
+  - first:
+      43: 4300004
+    second: Stele_9
+  - first:
+      43: 4300006
+    second: Stele_10
+  - first:
+      43: 4300008
+    second: Stele_7
+  - first:
+      43: 4300010
+    second: Stele_8
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,11 +132,15 @@ ModelImporter:
     clipAnimations: []
     isReadable: 1
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.5
+    - 0.25
+    - 0.01
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -78,18 +148,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -98,10 +169,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -111,13 +182,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -80,7 +80,7 @@ public class PlayerMouvement : MonoBehaviour {
 
             moveDirection = new Vector3((Input.GetMouseButton(1) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
 
-            if (Input.GetKeyDown(GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys["Sprint"]))
+            if (Input.GetKeyDown(Loader.get().datas.keys["Sprint"]))
             {
                 isWalking = !isWalking;
                 isRunning = !isRunning;
@@ -89,7 +89,7 @@ public class PlayerMouvement : MonoBehaviour {
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= (isWalking || Input.GetAxis("Vertical") < 0) ? walkSpeed : runSpeed;
 
-            if (Input.GetKeyDown(GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys["Jump"]) && canJump)
+            if (Input.GetKeyDown(Loader.get().datas.keys["Jump"]) && canJump)
             {
                 jump = true;
                 moveDirection.y = jumpSpeed;

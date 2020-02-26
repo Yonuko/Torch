@@ -24,7 +24,7 @@ public class MapManager : MonoBehaviour {
 
         if (Loader.IsLoader())
         {
-            l = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            l = Loader.get();
         }
 
     }

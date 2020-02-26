@@ -4244,7 +4244,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Crystal LOD2 LOD1
+  m_Name: staff anim FBX prefab_lods
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

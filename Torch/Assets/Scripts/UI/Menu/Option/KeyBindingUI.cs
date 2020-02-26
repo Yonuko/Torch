@@ -1,124 +1,83 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System;
 
-public class KeyBindingUI : MonoBehaviour {
+public class KeyBindingUI : MonoBehaviour
+{
 
+    public GameObject keyContentObject, keyBindingPrefab;
     KeysManager keysManager;
-    string[] buttonsName;
+    Loader loader;
+
+    Dictionary<string, Text> buttonsName = new Dictionary<string, Text>();
 
     string keyToRebind = null;
 
-    public List<Button> keysButtons = new List<Button>();
-
-    Dictionary<string, Text> buttonToLabel = new Dictionary<string, Text>();
-
-    public Dropdown inputMode;
-
-    public List<Sprite> xboxButtons = new List<Sprite>();
-    public List<Sprite> playstationButtons = new List<Sprite>();
-
-	// Use this for initialization
-	void Start () {
-
-        keysManager = GameObject.FindWithTag("KeyBind").GetComponent<KeysManager>();
-
-        // Change the inputs cells size to be responsive
-        transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<GridLayoutGroup>().cellSize = new Vector2(Screen.width * 0.18f, 40);
-
-        // Fill the button list
-        for (int i = 0; i < transform.GetChild(2).GetChild(0).GetChild(0).childCount; i++){
-            if (transform.GetChild(2).GetChild(0).GetChild(0).GetChild(i).name.Contains("Key"))
-            {
-                keysButtons.Add(transform.GetChild(2).GetChild(0).GetChild(0).GetChild(i).GetComponent<Button>());
-            }
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (Loader.IsLoader())
+        {
+            loader = Loader.get();
         }
 
-        buttonsName = keysManager.GetButtonNames();
+        keysManager = GetComponent<KeysManager>();
 
-        for (int i = 0; i < buttonsName.Length; i++)
+        foreach (string key in loader.datas.keys.Keys)
         {
-            string bn = buttonsName[i];
-            buttonToLabel[bn] = keysButtons[i].transform.GetChild(0).GetComponent<Text>();
-            keysButtons[i].onClick.AddListener( () => { StartRebindFor(bn); });
-        }
-        UpdateKeyShowing();
-
-        if (Input.GetJoystickNames().Length > 0)
-        {
-            for (int i = 0; i < Input.GetJoystickNames().Length; i++)
-            {
-                Dropdown.OptionData option = new Dropdown.OptionData();
-                option.text = Input.GetJoystickNames()[i];
-                Debug.Log(option);
-                Debug.Log(Input.GetJoystickNames().Length);
-                inputMode.options.Add(option);
-            }
-        }
-        else
-        {
-            inputMode.ClearOptions();
-            Dropdown.OptionData option = new Dropdown.OptionData();
-            option.text = "Keyboard";
-            inputMode.options.Add(option);
+            KeyCode bn = loader.datas.keys[key];
+            GameObject go = Instantiate(keyBindingPrefab, transform.position, transform.rotation, keyContentObject.transform);
+            go.transform.GetChild(0).GetComponent<Text>().text = key;
+            go.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = bn.ToString();
+            go.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => { StartRebindFor(key); });
+            buttonsName.Add(key, go.transform.GetChild(1).GetChild(0).GetComponent<Text>());
         }
 
     }
 
-    // Update is called once per framed
-
-    void Update() {
-
+    void Update()
+    {
         if (keyToRebind != null)
         {
             if (Input.anyKeyDown)
             {
-                Array kcs = Enum.GetValues( typeof(KeyCode) );
+                Array kcs = Enum.GetValues(typeof(KeyCode));
 
                 foreach (KeyCode kc in kcs)
                 {
                     if (Input.GetKeyDown(kc))
                     {
                         keysManager.SetButtonForKey(keyToRebind, kc);
-                        UpdateKeyShowing();
+                        UpdateKeyShowing(keyToRebind);
                         keyToRebind = null;
-                        GameObject.FindWithTag("Loader").GetComponent<Loader>().SaveKeys();
+                        loader.SaveKeys();
                         break;
                     }
                 }
             }
         }
 
-	}
+    }
 
     void StartRebindFor(string buttonNames)
     {
         keyToRebind = buttonNames;
     }
 
-    void UpdateKeyShowing()
+    public void QuitOption()
     {
-        for (int i = 0; i < buttonsName.Length; i++)
+        loader.Save();
+        SceneManager.LoadScene("Menu");
+    }
+
+    void UpdateKeyShowing(string temp)
+    {
+        foreach (string key in loader.datas.keys.Keys)
         {
-            string bn = buttonsName[i];
-            // Si on utilise un clavier
-            if (inputMode.value == 0)
-            {
-                buttonToLabel[bn].text = GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys[bn].ToString();
-            }
-            else
-            {
-                if (0 == 0)
-                {
-                    //Si il s'agit d'un manette de PS4
-                }
-                else
-                {
-                    //Si il s'agit d'une manette xbox
-                }
-            }
+            buttonsName[key].text = loader.datas.keys[key].ToString();
         }
     }
 }

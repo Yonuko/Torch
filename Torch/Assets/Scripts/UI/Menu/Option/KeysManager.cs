@@ -12,7 +12,7 @@ public class KeysManager : MonoBehaviour {
     void Awake () {
         if (Loader.IsLoader())
         {
-            Loader l = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            Loader l = Loader.get();
             keys = l.datas.keys;
         }
 	}
