@@ -30,7 +30,7 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     void Update()
     {
-        if (Input.GetKeyDown(GameObject.FindWithTag("Loader").GetComponent<Loader>().datas.keys["Drop"]) && selected)
+        if (Input.GetKeyDown(Loader.get().datas.keys["Drop"]) && selected)
         {
             ItemsManager.itemsManager.DropItem(1, slotIndex);
         }
@@ -76,7 +76,6 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (!Input.GetMouseButton(1))
         {
             transform.position = eventData.position;
-            // transform.SetParent(InventoryUI.inventoryUI.SlotPanel.transform);
             transform.SetParent(transform.root.GetComponent<InventoryUI>().itemsPanel.transform);
         }
     }

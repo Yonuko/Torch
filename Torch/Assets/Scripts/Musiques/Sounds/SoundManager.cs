@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour {
     void Start () {
         if (Loader.IsLoader())
         {
-            Loader l = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            Loader l = Loader.get();
             l.Load();
             soundActive = l.datas.soundActive;
             volume = l.datas.soundVolume;

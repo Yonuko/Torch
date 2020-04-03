@@ -119,4 +119,9 @@ public class Loader : MonoBehaviour {
             return false;
         }
     }
+
+    public static Loader get()
+    {
+        return Instance;
+    }
 }

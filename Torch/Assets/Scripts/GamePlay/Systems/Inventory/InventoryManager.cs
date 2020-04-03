@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
 
         if (Loader.IsLoader())
         {
-            l = GameObject.FindWithTag("Loader").GetComponent<Loader>();
+            l = Loader.get();
         }
 
         if (PlayerSaveLoader.IsPlayerLoader())
@@ -57,11 +57,6 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(l.datas.keys["Inventory"]))
         {
             inventory = !inventory;
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            RemoveItems(1, 5);
         }
     }
 

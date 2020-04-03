@@ -1,34 +1,80 @@
 fileFormatVersion: 2
 guid: 4024ad6af8df08a439d4973894311a06
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Blade
-    100002: Cut_handle
-    100004: Hand_protector
-    100006: Handler
-    100008: //RootNode
-    400000: Blade
-    400002: Cut_handle
-    400004: Hand_protector
-    400006: Handler
-    400008: //RootNode
-    2100000: lambert1
-    2300000: Blade
-    2300002: Cut_handle
-    2300004: Hand_protector
-    2300006: Handler
-    3300000: Blade
-    3300002: Cut_handle
-    3300004: Hand_protector
-    3300006: Handler
-    4300000: Cut_handle
-    4300002: Handler
-    4300004: Blade
-    4300006: Hand_protector
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Blade
+  - first:
+      1: 100002
+    second: Cut_handle
+  - first:
+      1: 100004
+    second: Hand_protector
+  - first:
+      1: 100006
+    second: Handler
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Blade
+  - first:
+      4: 400002
+    second: Cut_handle
+  - first:
+      4: 400004
+    second: Hand_protector
+  - first:
+      4: 400006
+    second: Handler
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: lambert1
+  - first:
+      23: 2300000
+    second: Blade
+  - first:
+      23: 2300002
+    second: Cut_handle
+  - first:
+      23: 2300004
+    second: Hand_protector
+  - first:
+      23: 2300006
+    second: Handler
+  - first:
+      33: 3300000
+    second: Blade
+  - first:
+      33: 3300002
+    second: Cut_handle
+  - first:
+      33: 3300004
+    second: Hand_protector
+  - first:
+      33: 3300006
+    second: Handler
+  - first:
+      43: 4300000
+    second: Cut_handle
+  - first:
+      43: 4300002
+    second: Handler
+  - first:
+      43: 4300004
+    second: Blade
+  - first:
+      43: 4300006
+    second: Hand_protector
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -56,11 +102,15 @@ ModelImporter:
     clipAnimations: []
     isReadable: 1
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.5
+    - 0.25
+    - 0.01
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -68,18 +118,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -88,10 +139,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -101,13 +152,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
